@@ -4,10 +4,10 @@ author: David McCullough
 pubDatetime: 2022-06-06T04:06:31Z
 slug: my-experience-with-clangd
 featured: false
-draft: true
+draft: true 
 tags: 
     - programming 
-    - edit
+    - ready
 description:
     My experience with clangd in embedded systems.
 ---
@@ -38,12 +38,15 @@ In clangd's case, there are three kinds of configuration files.
 * compile_commands.json
 
 The configuration files tell clangd how each source file is compiled.
-clangd uses the configuration files to make the connections between all your source files.
+clangd uses the configuration files to make the connections between the source files.
 It's possible to use both _.clangd_ and _compile_commands.json_ in one project. 
-In that configuration, _.clangd_ is used to change global options for clangd, and _compile_commands.json_ is used to describe the compile flags for each source file.
+In that configuration, _.clangd_ is used to specify global options for clangd, and _compile_commands.json_ is used to describe the compile flags for each source file.
 
 When invoked on a certain file, clangd searches for the configuration files in the parent directory of the file.
 The implication is that by default, all paths in the configuration files are relative to the current file.
+The exception is the `directory` field in _compile_commands.json_.
+This must be an absolute path.
+However, the paths passed to the `arguments` field can be relative to the current file on which clangd is operating on.
 
 Generally, _compile_commands.json_ is preferred, and overrides _.clangd_, which overrides _compile_flags.txt_.
 The recommended place to put the configuration files is in the root of your project.
@@ -65,11 +68,10 @@ In my case, I was locked into a pre-defined project structure and a custom toolc
 That meant I had to mold the configuration files to my existing setup.
 
 _compile_commands.json_ requires one entry for every file in the project.
-It is usually automatically generated using another tool such as [Bear](https://github.com/rizsotto/Bear).
-I wanted to avoid using _compile_commands.json_ because I couldn't use any of the existing tools to create it.
+It is usually automatically generated using another tool such as [Bear](https://github.com/rizsotto/Bear) or [CMake](https://cmake.org/).
+I wanted to avoid using _compile_commands.json_ because I didn't think I could use any of the existing tools to create it.
 My project structure is fixed, and all files compile with the same options.
 It seemed that this is the ideal case for a _.clangd_ style configuration.
-
 
 ## .clangd
 My first attempt was to place a _.clangd_ file in the root of my project.
@@ -88,10 +90,10 @@ CompileFlags:
     Add: [-std=c99, -I../inc]
     Compiler: clang++
 ```
-The _Add_ field is the list of compile flags that are passed to the compiler when building each source file.
+The `Add` field is the list of compile flags that are passed to the compiler when building each source file.
 Of course, you should add all the compile flags for your project to the list.
 
-Note how the path for the '-I' flag moves up one directory.
+Note how the path for the `-I` flag moves up one directory.
 It's relative to each source file, _not_ the location of _.clangd_.
 
 If, for example, we added another .c file under `src/some-other-folder/`, clangd features wouldn't work completely.
@@ -99,6 +101,9 @@ For `main.c`, clangd would find _.clangd_ and `other.h`.
 All of clangd's features would work for things declared in `other.h`.
 For the new file, clangd would find _.clangd_ but would look in `src/inc/` for `other.h`, since the path is relative to the file being operated on.
 Obviously, clangd would fail to find `other.h`, and anything in our new .c file using things from `other.h` would not be included in clangd's analysis.
+
+This severely limits the use of a _.clangd_ file for specifying compile flags.
+Effectively, all .c and .cpp files must be in the same directory.
 
 
 ## compile_flags.txt
@@ -119,7 +124,8 @@ As a brief detour before discussing background indexing, here is the _compile_fl
 -I../inc 
 ```
 Again, take note of the relative path for the `/inc` directory.
-
+_compile_flags.txt_ suffers from similar problems as _.clangd_, for the same reasons.
+It should only be used for extremely simple projects.
 
 ## Background Indexing
 It turns out clangd builds an index containing information about every file for which it analyses.
@@ -129,7 +135,7 @@ Unfortunately, clangd only builds the entire index straight away if _compile_com
 This means that if _.clangd_ or _compile_flags.txt_ is used to configure clangd, each source file has to be opened before any of clangd's fancy features are enabled for it.
 That means things like go-to-definition and autocomplete don't work properly until the relevant files have been opened at least once.
 
-Therefore, I couldn't get away with using only _.clangd_. 
+Therefore, I couldn't get away with using only _.clangd_ or _compile_flags.txt_.
 I needed to use _compile_commands.json_.
 
 ## compile_commands.json
@@ -160,7 +166,9 @@ A _compile_commands.json_ for our example project would look like this:
 ]
 ```
 
-One thing I don't like about the [_compile_commands.json_ format](https://clang.llvm.org/docs/JSONCompilationDatabase.html) is that the _"directory"_ field must contain an absolute path. 
+I'm still not sure exactly why my custom made _compile_commands.json_ doesn't work.
+
+One thing I don't like about the [_compile_commands.json_ format](https://clang.llvm.org/docs/JSONCompilationDatabase.html) is that the `directory` field must contain an absolute path. 
 I think it would be better if this could be relative to the directory in which _compile_commands.json_ is stored.
 
 # The Curse of the Embedded Compiler
@@ -172,8 +180,7 @@ If you're compiling for [X86](https://en.wikipedia.org/wiki/X86), or using a pop
 However, if you're like me, you're not working with one of the hugely popular, and often open, compilers.
 You're working with a compiler made for a microcontroller that the clangd developers might mention to each other once a decade.
 clangd isn't able to translate your compile flags to the clang equivalent.
-As a result, it spits out so many errors that it is unusable.
-Unfortunately, in my case, clangd isn't the right tool.
+As a result, it spits out a bunch of false errors.
 
 ## query-driver
 clangd does have a [--query-driver](https://releases.llvm.org/10.0.0/tools/clang/tools/extra/docs/clangd/Configuration.html) option.
@@ -181,17 +188,23 @@ As a last attempt, I added the flag and the path to my compiler in my Neovim con
 
 Whatever my compiler returned is not what clangd requires, and clangd failed to start.
 
-# VSCode?
-I really wanted this to work.
-I've been using Neovim for Python development for a few weeks and I much prefer it to VSCode.
-For now, it seems like I will have to stick to VSCode for my main work.
+# An Unexpected Breakthrough
+A few weeks after giving up on clangd, I was casually looking around to see if there is an Intellisense integration for Neovim.
+I stumbled across this [Reddit post](https://www.reddit.com/r/neovim/comments/17rhvtl/guide_how_to_use_clangd_cc_lsp_in_any_project/).
 
-If I ever do any ARM development I will certainly give this a go again.
-My reading online indicates that some people have had success with clangd and ARM.
+It was relatively easy to adapt the idea to my project.
+A couple of [Bash](https://www.gnu.org/software/bash/) scripts later, and clangd was integrated into my toolchain and working properly for the first time!
+I've been using my Neovim setup with clangd exclusively at work in the last few weeks.
+There are a few false positives but in general everything is working extremely well.
+
+I'm not sure why my attempt at generating a _compile_commands.json_ failed.
+The CMake version creates a `/cmake` folder which stores the project's information.
+That makes it difficult to compare it to my 'manual' method.
+
 
 # Why Does Intellisense Work?
-After failing to get clangd to work well, I wanted to know why Intellisense has been working so well for me thus far. 
-I didn't spend too much time researching this, but from what I understand Intellisense analyses the raw text of the source files, while clangd analyses the project's build outputs.
+After struggling with clangd for so long, I wanted to know why Intellisense has been working so well for me thus far. 
+I didn't spend too much time researching this, but from what I understand Intellisense analyses the raw text of the source files, while clangd analyses the project's theoretical build outputs.
 Theoretically, the clangd analysis should be better.
 Of course, whatever is being analysed must be 'clangd compatible'.
 
@@ -211,25 +224,39 @@ I think my struggles were born out of a number of problems.
 The documentation is only one of them.
 
 Looking back, I was trying to do things that the clangd developers would probably consider non-standard.
-With that said, I wasted a lot of time debugging things that clangd isn't suitable for.
+With that said, I wasted a lot of time debugging things that could have been avoided with clearer documentation.
 If the documentation was more structured, better written and had more examples, I'm sure I would have spent far less time chasing ghosts.
 
 Some of my problems could have been avoided if I had read more carefully, but I am still inclined to shift the blame onto the clangd documentation.
 It felt clumsy and difficult to navigate.
 Answers weren't where I thought they would be, and oftentimes the content only partially answered my questions.
 
+In the end, it wasn't the official documentation that helped me to get it working.
+In fact, most of the useful tips, hints, and information was found in various random posts scattered around the internet.
+
 I spend a lot of time reading documentation.
 Good documentation is a friction-less experience.
 It not only walks you through the most common use cases of whatever it documents, it also provides an easily navigate-able reference for more complex use cases.
-In my opinion, the clangd documentation just doesn't do that.
+In my opinion, the clangd documentation doesn't do that.
+
+I'm a big fan of the [Diataxis](https://diataxis.fr/) theory of documentation. 
+It follows a system that is designed to avoid the problems that I feel the clangd documentation has.
+Perhaps the LLVM project could consider Diataxis as a way to improve their documentation.
 
 # Conclusion
-This was a frustrating and time consuming experience that didn't lead to much.
-I'm sure clangd works extremely well when paired with more popular compilers.
-In my corner of the world, Intellisense simply works better.
+This was a frustrating and time consuming experience.
+In the end, I was able to get things working well.
 
-It would be great if there was some kind of Intellisense plugin for Neovim that used the same techniques as the official Intellisense.
-For now, I'll have to accept that I can't use Neovim for the type of work I need to do.
+I haven't use clangd long enough to see if it is really better than Intellisense.
+However, I can already see that it does the job at least as well.
 
+The main benefit is that I am now able to use Neovim for my embedded development at work.
+This certainly wouldn't have been worth it if I was sticking with VSCode.
+My day to day development experience is undoubtably better in Neovim.
+I wouldn't be able to use Neovim at all if I hadn't struggled through this process.
+For that reason alone, it was a worthwhile struggle.
+
+In future, I will make sure so use CMake to set up my toolchain where possible.
+That way, I can benefit from all of CMake's features directly, including it's ability to generate the _compile_commands.json_ configuration file.
 
 [^clangd-vs-intellisense]: That's not quite the full story, but it's close enough for this post.

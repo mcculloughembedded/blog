@@ -7,6 +7,7 @@ featured: false
 draft: true
 tags: 
     - book-review
+    - ready
 description:
     How I review and rate books.
 ---
