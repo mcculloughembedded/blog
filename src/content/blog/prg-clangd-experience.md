@@ -4,7 +4,7 @@ author: David McCullough
 pubDatetime: 2022-06-06T04:06:31Z
 slug: my-experience-with-clangd
 featured: false
-draft: false
+draft: true
 tags: 
     - programming 
 description:

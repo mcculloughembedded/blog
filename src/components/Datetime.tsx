@@ -64,9 +64,10 @@ const FormattedDatetime = ({ pubDatetime, modDatetime }: DatetimesProps) => {
   return (
     <>
       <time dateTime={myDatetime.toISOString()}>{date}</time>
-      <span aria-hidden="true"> | </span>
-      <span className="sr-only">&nbsp;at&nbsp;</span>
-      <span className="text-nowrap">{time}</span>
     </>
   );
+    // Put the below in the return for the full date + time in blog post headings
+      // <span aria-hidden="true"> | </span>
+      // <span className="sr-only">&nbsp;at&nbsp;</span>
+      // <span className="text-nowrap">{time}</span>
 };

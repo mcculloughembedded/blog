@@ -1,7 +1,7 @@
 ---
 title: Why I Started a Blog
 author: David McCullough
-pubDatetime: 2022-06-06T04:06:31Z
+pubDatetime: 2024-04-13T04:00:00Z
 slug: why-I-started-a-blog
 featured: true
 draft: false
