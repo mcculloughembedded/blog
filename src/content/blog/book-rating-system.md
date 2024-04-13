@@ -30,7 +30,7 @@ Because it makes you think about what you've read.
 
 # The Rating System
 For any metric to be useful, it must be well defined and consistent.
-On the day when I rated every book I could remember reading, I didn't have a system.
+On the day I rated every book I could remember reading, I didn't have a system.
 As a result, I don't consider that set of ratings to be comparable, and in hindsight I didn't have to think as much about what I read as I do now.
 
 I've come up with a five star rating system that I have been using for the past year or so.
@@ -43,7 +43,7 @@ One star books are so bad that I couldn't finish them.
 I try to complete every book that I read, but if it becomes a chore to read a book, it's better to abandon it.
 
 Rating things is inherently subjective, but of the five possible ratings, this is the most subjective.
-The reasons I dislike a book so much that I can't finish it are very different from any one else's.
+My reasons for disliking a book so much that I can't finish it are very different from any one else's.
 I may not resonate with the writing style, or I may think that the book is utter nonsense.
 Of course, it may also simply be a poorly written book.
 
@@ -64,7 +64,6 @@ This tends to not be my most popular category.
 At first, this might be surprising.
 Surely most books would tend towards being average? 
 Well, actually no.
-This is _my_ rating system.
 I don't read books that I think will be average.
 I read books that I think I will enjoy.
 
@@ -73,14 +72,14 @@ The main question I ask myself before giving a book four stars is, "Would I reco
 If the answer is "yes", the book gets four stars.
 
 A four star book must be written well, and/or it must deliver a worthwhile message.
-Weirdly, I don't need to have enjoyed the book to give it four stars.
+I don't need to have enjoyed the book to give it four stars.
 What's important is that the book or its message is well constructed. 
 I can appreciate quality even if it doesn't align with what I normally enjoy.
 
 I've found four star books to form the majority of my reading.
 
 ## Five Star Books
-Five star books are books that I recommend to people even if they don't ask me to.
+Five star books are books that I recommend to people even if they haven't asked for a book recommendation.
 They provide insights that change my world view, or make me change my behaviour in the long term.
 They are so good that I feel they should be shared with everyone.
 
@@ -98,9 +97,10 @@ That is what giving them five stars means: I want to share them even though nobo
 
 In the past, I have tended to review fiction as well as non-fiction books aimed at the general public.
 Part of the reason for doing book reviews on this blog is to expand my review process to more technical books.
-These are books that read more like textbooks than anything else, and cover specific technical topics.
-In general, technical books reviews on this blog will focus on embedded systems and programming.
+These are books that read more like textbooks than novels.
+They cover specific techinical topics.
+In general, technical book reviews on this blog will focus on embedded systems and programming.
 
-Up and until now, I have been using this system to rate books on GoodReads.
+Up until now, I have been using this system to rate books on GoodReads.
 I will continue to do that in most cases.
 However, every now and again I will post a longer review here, especially if I enjoyed the book in question.
