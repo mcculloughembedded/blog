@@ -4,12 +4,12 @@ author: David McCullough
 pubDatetime: 2024-04-20T04:00:00Z
 slug: my-experience-with-clangd
 featured: false
-draft: false 
-tags: 
-    - programming 
+draft: false
+tags:
+    - programming
     - ready
 description:
-    My experience with clangd in embedded systems.
+     Using clangd in embedded systems.
 ---
 
 # What is clangd?
@@ -39,7 +39,7 @@ In clangd's case, there are three kinds of configuration files.
 
 The configuration files tell clangd how each source file is compiled.
 clangd uses the configuration files to make the connections between the source files.
-It's possible to use both _.clangd_ and _compile_commands.json_ in one project. 
+It's possible to use both _.clangd_ and _compile_commands.json_ in one project.
 In that configuration, _.clangd_ is used to specify global options for clangd, and _compile_commands.json_ is used to describe the compile flags for each source file.
 
 When invoked on a certain file, clangd searches for the configuration files in the parent directory of the file.
@@ -56,7 +56,7 @@ For the remainder of this post, we'll work with a project directory called 'clan
 clangd-config
 │ clangd-configuration-file
 ├─inc
-│  other.h 
+│  other.h
 └─src
    main.c
    other.c
@@ -107,7 +107,7 @@ Effectively, all .c and .cpp files must be in the same directory.
 
 
 ## compile_flags.txt
-_compile_flags.txt_ is a simplified version of _.clangd_. 
+_compile_flags.txt_ is a simplified version of _.clangd_.
 Both files let you specify the compile flags that are applied globally for every source file, but _.clangd_ has some extra options that change the behaviour of clangd.
 
 Somehow I lucked into a working configuration.
@@ -121,7 +121,7 @@ Enter _background indexing_.
 As a brief detour before discussing background indexing, here is the _compile_flags.txt_ file for our example project.
 ```
 -std=c99
--I../inc 
+-I../inc
 ```
 Again, take note of the relative path for the `/inc` directory.
 _compile_flags.txt_ suffers from similar problems as _.clangd_, for the same reasons.
@@ -153,12 +153,12 @@ Soon, however, the cracks began to show, and before long they had split any hope
 A _compile_commands.json_ for our example project would look like this:
 ```json
 [
-    { 
+    {
         "directory": "/home/user/clang-config/src",
         "arguments": ["clang++", "-std=c99", "-I../inc", "-o", "-c", "main.o", "main.c"],
         "file": "main.c"
     },
-    { 
+    {
         "directory": "/home/user/clang-config/src",
         "arguments": ["clang++", "-std=c99", "-I../inc", "-o", "-c", "other.o", "other.c"],
         "file": "other.c"
@@ -168,7 +168,7 @@ A _compile_commands.json_ for our example project would look like this:
 
 I'm still not sure exactly why my custom made _compile_commands.json_ doesn't work.
 
-One thing I don't like about the [_compile_commands.json_ format](https://clang.llvm.org/docs/JSONCompilationDatabase.html) is that the `directory` field must contain an absolute path. 
+One thing I don't like about the [_compile_commands.json_ format](https://clang.llvm.org/docs/JSONCompilationDatabase.html) is that the `directory` field must contain an absolute path.
 I think it would be better if this could be relative to the directory in which _compile_commands.json_ is stored.
 
 # The Curse of the Embedded Compiler
@@ -203,7 +203,7 @@ That makes it difficult to compare it to my 'manual' method.
 
 
 # Why Does Intellisense Work?
-After struggling with clangd for so long, I wanted to know why Intellisense has been working so well for me thus far. 
+After struggling with clangd for so long, I wanted to know why Intellisense has been working so well for me thus far.
 I didn't spend too much time researching this, but from what I understand Intellisense analyses the raw text of the source files, while clangd analyses the project's theoretical build outputs.
 Theoretically, the clangd analysis should be better.
 Of course, whatever is being analysed must be 'clangd compatible'.
@@ -239,7 +239,7 @@ Good documentation is a friction-less experience.
 It not only walks you through the most common use cases of whatever it documents, it also provides an easily navigate-able reference for more complex use cases.
 In my opinion, the clangd documentation doesn't do that.
 
-I'm a big fan of the [Diataxis](https://diataxis.fr/) theory of documentation. 
+I'm a big fan of the [Diataxis](https://diataxis.fr/) theory of documentation.
 It follows a system that is designed to avoid the problems that I feel the clangd documentation has.
 Perhaps the LLVM project could consider Diataxis as a way to improve their documentation.
 
