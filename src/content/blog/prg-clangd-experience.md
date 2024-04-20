@@ -1,10 +1,10 @@
 ---
 title: My Experience with clangd
 author: David McCullough
-pubDatetime: 2022-06-06T04:06:31Z
+pubDatetime: 2024-04-20T04:00:00Z
 slug: my-experience-with-clangd
 featured: false
-draft: true 
+draft: false 
 tags: 
     - programming 
     - ready
