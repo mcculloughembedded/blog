@@ -8,7 +8,7 @@ draft: false
 tags:
     - programming
 description:
-    My experience with clangd in embedded systems.
+     Using clangd in embedded systems.
 ---
 
 # What is clangd?
