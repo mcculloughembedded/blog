@@ -255,7 +255,7 @@ My day to day development experience is undoubtably better in Neovim.
 I wouldn't be able to use Neovim at all if I hadn't struggled through this process.
 For that reason alone, it was a worthwhile struggle.
 
-In future, I will make sure so use CMake to set up my toolchain where possible.
+In future, I will make sure to use CMake to set up my toolchain where possible.
 That way, I can benefit from all of CMake's features directly, including it's ability to generate the _compile_commands.json_ configuration file.
 
 [^clangd-vs-intellisense]: That's not quite the full story, but it's close enough for this post.

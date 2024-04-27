@@ -1,13 +1,12 @@
 ---
 title: My Book Rating System
 author: David McCullough
-pubDatetime: 2022-06-06T04:06:31Z
+pubDatetime: 2024-04-27T04:06:31Z
 slug: my-book-rating-system
 featured: false
-draft: true
-tags: 
+draft: false
+tags:
     - book-review
-    - ready
 description:
     How I review and rate books.
 ---
@@ -20,11 +19,11 @@ After some consideration, I figured if I was ever going to use social media, a s
 
 At first, I didn't use GoodReads for much. It was just another internet account; another email; another notification.
 Then, one day, I decided to go through all the books I could remember reading, add them to my GoodReads account and rate them using GoodReads' star rating system.
-The result wasn't some kind of revolution in my reading, but I did pick up on a few of my reading habits; and it _did_ make me think about the books I rated.
+The result wasn't a revolution in my reading, but I did pick up on a few of my reading habits; and it _did_ make me think about the books I rated.
 
 Since then, my use of GoodReads has evolved.
 I use it to keep a history of the books I've read, and to find new books.
-I've found a few good authors through my GoodReads recommendations, and through the annual GoodReads Choice Awards.
+I've found a few good authors through my GoodReads recommendations, and through the annual [GoodReads Choice Awards](https://www.goodreads.com/choiceawards).
 
 So why review and rate books?
 Because it makes you think about what you've read.
@@ -40,11 +39,11 @@ Each star has a meaning, and half stars are not allowed.
 I rate the books as soon as I finish them, and I never change the rating later.
 
 ## One Star Books
-One star books are so bad that I couldn't finish them. 
+One star books are so bad that I couldn't finish them.
 I try to complete every book that I read, but if it becomes a chore to read a book, it's better to abandon it.
 
 Rating things is inherently subjective, but of the five possible ratings, this is the most subjective.
-My reasons for disliking a book so much that I can't finish it are very different from any one else's.
+My reasons for disliking a book so much that I can't finish it are very different from anyone else's.
 I may not resonate with the writing style, or I may think that the book is utter nonsense.
 Of course, it may also simply be a poorly written book.
 
@@ -52,7 +51,7 @@ Of course, it may also simply be a poorly written book.
 Two star books are books that I didn't enjoy, but I was able to finish.
 In general, it's very rare that I don't finish a book, so practically two stars is still a very poor rating.
 
-The reasons for rating a book two stars are much the same as for rating one one star.
+The reasons for rating a book two stars are much the same as for rating a book one star.
 The only difference is whether I was able to push through and get to the end or not.
 
 ##  Three Star Books
@@ -62,19 +61,16 @@ They aren't bad, but I wouldn't recommend them to anybody.
 Three star books are usually forgettable.
 
 This tends to not be my most popular category.
-At first, this might be surprising.
-Surely most books would tend towards being average? 
-Well, actually no.
 I don't read books that I think will be average.
-I read books that I think I will enjoy.
+I read books that I think I will enjoy, or that will expand my world view.
 
 ## Four Star Books
 The main question I ask myself before giving a book four stars is, "Would I recommend this book to someone else if asked?".
-If the answer is "yes", the book gets four stars.
+If the answer is 'yes', the book gets four stars.
 
 A four star book must be written well, and/or it must deliver a worthwhile message.
 I don't need to have enjoyed the book to give it four stars.
-What's important is that the book or its message is well constructed. 
+What's important is that the book or its message is well constructed.
 I can appreciate quality even if it doesn't align with what I normally enjoy.
 
 I've found four star books to form the majority of my reading.
@@ -88,6 +84,10 @@ Five star books have to be universal.
 Everybody must be able to enjoy or take something away from them, even if it's not to the same extent I did.
 As well as being written well, they must deliver a worthwhile message.
 
+This definition is relaxed for technical books.
+For technical books, the requirements change to 'everyone in the relevant field must be able to take something away from the book'.
+It would be unreasonable not to rate a book on C programming 5 stars because a graphics designer wouldn't enjoy it.
+
 Very few books get a five star rating.
 The requirements are tough, and they should be.
 To date, I've only given four books a five star rating, and one of them is debatable.
@@ -96,10 +96,11 @@ To date, I've only given four books a five star rating, and one of them is debat
 I'd like to write reviews for the four books I have given five stars.
 That is what giving them five stars means: I want to share them even though nobody has asked.
 
-In the past, I have tended to review fiction as well as non-fiction books aimed at the general public.
+In the past, I have only reviewed fiction and 'easy read' non-fiction books.
+The 'easy read' non-fiction books are science or engineering focused books whose target audience is the general public.
 Part of the reason for doing book reviews on this blog is to expand my review process to more technical books.
 These are books that read more like textbooks than novels.
-They cover specific techinical topics.
+They cover specific technical topics.
 In general, technical book reviews on this blog will focus on embedded systems and programming.
 
 Up until now, I have been using this system to rate books on GoodReads.
