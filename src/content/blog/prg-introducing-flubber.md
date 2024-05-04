@@ -1,7 +1,7 @@
 ---
 title: Introducing Flubber
 author: David McCullough
-pubDatetime: 2024-04-20T04:00:00Z
+pubDatetime: 2024-05-04T04:00:00Z
 slug: introducting-flubber
 featured: false
 draft: false
@@ -13,7 +13,7 @@ description:
 
 It's been about a year since I was first introduced to the concept of [Test Driven Development](https://www.agilealliance.org/glossary/tdd/) (TDD).
 That is a statement that I almost find unbelievable.
-I've been through an entire engineering degree, with multiple courses on programming, and TDD was not even mentioned!
+I've been through an entire engineering degree, with multiple courses on programming, and TDD was not even mentioned once!
 
 Since learning about the idea, I've only managed to apply it sporadically.
 Day to day, I work with memory constrained embedded devices.
@@ -23,7 +23,7 @@ Couple that with deadline pressure and a work environment that does not mandate 
 On the occasion that I have steadfastly stuck to the idea of TDD, it has worked extremely well.
 
 So what's the problem?
-Why haven't I been using it all the time?
+Why haven't I been using TDD all the time?
 
 # The First Step is Difficult!
 Imagine, like me, that you've been happily practicing what James Grenning calls [Debug Later Programming](http://blog.wingman-sw.com/physics-of-test-driven-development).
@@ -37,24 +37,29 @@ James has even written a [whole book](https://www.goodreads.com/book/show/950579
 Time to write your first test!
 
 But what's this?
-The recommended [getting started](https://github.com/jwgrenning/cpputest-starter-project?tab=readme-ov-file) project is filled with [Bash](https://www.gnu.org/software/bash/), [Docker](https://www.docker.com/) and [Make](https://www.gnu.org/software/make/), and it only works on Linux![^james-is-not-an-idiot]
+The recommended [getting started](https://github.com/jwgrenning/cpputest-starter-project?tab=readme-ov-file) project is filled with [Bash](https://www.gnu.org/software/bash/), [Docker](https://www.docker.com/) and [Make](https://www.gnu.org/software/make/)![^james-is-not-an-idiot]
 It's all the usual confusing and unintuitive tools that any C/C++ developer has fought with before.
 
 The first step is difficult.
 
-That's where Flubber comes in.
+That's where [Flubber](https://github.com/mcculloughembedded/flubber) comes in.
 
 # What is Flubber?
 Flubber is a cross-platorm[^is-it-really-cross-platform] command line interface (CLI) that automates the setup and execution of CppuTest tests.
 It's like James' starter project, but it requires no knowledge of the underlying tools.
 
+Flubber introduces the concept of _Test Components_.
+Each test component runs its own test executable.
+Combined with CppuTest's test groups, this makes for a very flexible and easy to use test environment.
+
 Flubber aims to be extensible.
 If you have knowledge of the underlying tools, you should be able to tailor its behaviour to your liking.
-If you don't, Flubber allows you to just write tests, without all the usual troubles!
+If you don't, Flubber hides all the confusing scripts behind its CLI.
+Flubber allows you to just write tests, without wondering what caused the latest obscure Makefile error!
 
 # Getting Started
 I recommend you read Flubber's readme.
-Flubber' GitHub is the go-to source for everything, so I won't elaborate further here.
+[Flubber's GitHub](https://github.com/mcculloughembedded/flubber) is the go-to source for everything, so I won't elaborate further here.
 
 # Why?
 Flubber was motivated by my desire to learn TDD.
@@ -63,7 +68,7 @@ I felt like the process of simply getting the test executor to run was getting i
 For me, it was too much mental overhead to get started.
 Ironically, that triggered a much larger project.
 
-I've been using Flubber to work through James' book, and I've integrated it into my profesional workflow.
+I've been using Flubber to work through James' book, and I've integrated it into my professional workflow.
 Obviously, I'm not an expert in TDD.
 Flubber is probably missing a few pieces of the puzzle, and overlooking others.
 If anything, that's why I've decided to make it public.
@@ -76,4 +81,4 @@ I watched the [remake](https://en.wikipedia.org/wiki/Flubber_(film)) when I was 
 
 
 [^james-is-not-an-idiot]: This isn't a hit on the starter project. Anyone already familiar with these tools will find it extremely useful. It's just that large parts of Bash and Make border on the esoteric.
-[^is-it-really-cross-platform]: As of the time of writing, I am pretty much the only person who uses Flubber. Flubber is _supposed_ to be cross-platform, but I've only used it on Window.
+[^is-it-really-cross-platform]: As of the time of writing, I am pretty much the only person who uses Flubber. Flubber is _supposed_ to be cross-platform, but I've only used it on Windows.
