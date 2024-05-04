@@ -8,7 +8,7 @@ draft: false
 tags:
     - programming
 description:
-     A set of scripts to make using CppuTest easier!
+     A command line interface to automate the setup and execution of CppuTest tests.
 ---
 
 It's been about a year since I was first introduced to the concept of [Test Driven Development](https://www.agilealliance.org/glossary/tdd/) (TDD).
