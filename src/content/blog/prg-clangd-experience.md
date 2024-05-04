@@ -7,7 +7,6 @@ featured: false
 draft: false
 tags:
     - programming
-    - ready
 description:
      Using clangd in embedded systems.
 ---
