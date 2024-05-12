@@ -1,7 +1,7 @@
 ---
 title: Three Core Ideas in TDD
 author: David McCullough
-pubDatetime: 2024-04-20T04:00:00Z
+pubDatetime: 2024-05-12T04:00:00Z
 slug: three-core-ideas-in-tdd
 featured: false
 draft: false
@@ -34,7 +34,7 @@ Following this idea has significant implications on how one approaches things.
 It implies that to achieve one's goals, one should create systems that make it impossible to _not_ achieve them.
 
 This is exactly what TDD is for programming.
-It is a set of guidelines that can almost be followed blindly to get you from nothing to working code.
+It is a set of guidelines that can be followed almost blindly to get you from nothing to working code.
 
 I think this is what I like most about the idea of TDD.
 When I sit down to code, I don't have to think much about what to do next.
@@ -64,7 +64,7 @@ In the first chapter of his TDD book, James stresses two points:
 2. Do the simplest thing that could possibly work
 
 If you are interested in TDD, applied to embedded systems or not, I highly recommend reading James' blog post about implementing a circular buffer.
-James's circular buffer walkthrough highlights these two points by showing them off in practice.
+James's circular buffer walk-through highlights these two points by showing them off in practice.
 At various stages of his implementation, he hard-codes values in his production code to make his tests pass.
 To a non-TDD'er, this feels completely wrong.
 
@@ -84,7 +84,8 @@ Robert C. Martin talks about a method for deciding what to do next in [this blog
 I don't think that the level of detail introduced by The Transformation Priority Premise is practical.
 What is does, however, is create a general feeling for what change to make next.
 
-Robert's post is a much better discussion of the topic than I could ever write, and there is no need for me to go over it here.
+Robert's post is a much better discussion of the topic than I could ever write.
+There is no need for me to go over it here.
 I would, however, like to highlight one point that he makes.
 
 >As the tests get more specific, the code gets more generic.
@@ -108,7 +109,7 @@ TDD results in a clearer separation of responsibilities between code modules.
 This is something that embedded developers tend to say is not practical.
 In my experience, working in an environment where every byte counts, I've found the opposite to be true.
 When I don't apply TDD, my code quickly becomes a mess of highly coupled modules.
-With TDD, there is no choice but to stand back, think about what each module is responsible for, and create clear separation between the modules.
+With TDD, there is no choice but to stand back, think about what each module is responsible for, and create clear separation between them.
 If you apply TDD, you have to do this.
 If you don't, writing tests becomes a nightmare.
 
@@ -122,8 +123,8 @@ The net result of applying TDD is better, more decoupled, and easier to change i
 When I first tried TDD in a real world scenario, I fell for what is probably the most common TDD trap.
 I tested the internal implementation of my code.
 This not only makes the tests fragile, it also takes away the benefit of having the tests drive the interface.
-When I started testing outcomes and not implementations, I found I would reguarly stop and consider if the interface was sensible.
-I did this because the tests forced me to consider what role the bit of code under tests was playing.
+When I started testing outcomes and not implementations, I found I would regularly stop and consider if the interface was sensible.
+I did this because the tests forced me to consider what role the bit of code under test was playing.
 The tests drove the interface.
 
 Tests drive the interface by forcing the programmer to use it at every step.
@@ -133,8 +134,15 @@ When I compare my non-TDD code to my TDD code, this point is painfully obvious.
 It doesn't take more than a quick scan to see that the TDD code is more logical and better organised.
 
 # Conclusion
+Good programming isn't easy.
+We need systems to help us make it easier.
+TDD is one of those systems.
+
 The power of TDD is obvious.
 Like any tool, it must be used properly.
 
+It's easy to get caught up in the details of TDD.
+For the new practitioner, there can be a lot of them!
+
 These three points are the ideas on which TDD is built.
-As I progress with TDD, I will keep them in the back of my mind.
+With each application of TDD, one must remember to occasionally step back and consider the high level purpose of the method.
