@@ -1,13 +1,13 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://mcculloughembedded.com/",
   author: "David McCullough",
   desc: "Personal Blog",
   title: "mcculloughembedded",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: false,
-  postPerPage: 3,
+  postPerPage: 100,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
