@@ -8,7 +8,7 @@ draft: false
 tags:
     - programming
 description:
-     Discussing three high level ideas in Test Driven Development
+     Discussing three high level ideas in Test Driven Development.
 ---
 
 In the last few weeks, I've been taking learning Test Driven Development (TDD) more seriously.
