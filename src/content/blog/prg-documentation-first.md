@@ -2,10 +2,10 @@
 title: My Book Rating System
 author: David McCullough
 pubDatetime: 2022-06-06T04:06:31Z
-slug: nvim-config 
+slug: documentation-first
 featured: true
 draft: true
-tags: 
+tags:
     - book-review
 description:
     How and I review and rate books.
