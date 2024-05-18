@@ -71,7 +71,7 @@ To a non-TDD'er, this feels completely wrong.
 At every stage, James does the simplest thing that could possibly work.
 In doing so, he proves that his production code does what the _current_ set of tests describes.
 This what 'the tests are right' means and it is an _extremely_ important point.
-Tests aren't useless if they fail silently, or worse; pass when they should fail.
+Tests are useless if they fail silently, or worse; pass when they should fail.
 By always taking the smallest next step, the risk of writing a poor test, or writing tests that don't cover all the behaviour, is minimised.
 
 To someone learning TDD, this can be easier said than done.
