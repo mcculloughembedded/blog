@@ -4,7 +4,7 @@ author: David McCullough
 pubDatetime: 2024-04-20T04:00:00Z
 slug: custom-mechanical-keyboard-part-one
 featured: false
-draft: false
+draft: true
 tags:
     - project
 description:
