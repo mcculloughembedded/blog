@@ -1,18 +1,13 @@
 ---
 title: Taking a Musical Walk
 author: David McCullough
-pubDatetime: 2022-06-06T04:06:31Z
+pubDatetime: 2024-06-18T04:06:31Z
 slug: taking-a-musical-walk
 featured: false
 draft: false
-tags:
-    - edit
 description:
-    Building the Circle of 5ths
+    Building the Circle of 5ths.
 ---
-
-import { Image } from 'astro:assets';
-import rocket from '../assets/rocket.png';
 
 # Music Theory
 In a bout of unexpected enthusiasum, I have recently taken a keen interest in music theory.
@@ -38,11 +33,11 @@ For the moment, I am happy to accept that I will occasionally have to memorise s
 # The Circle of 5ths
 One of the most practical ways to apply music theory is to learn the Circle of 5ths.
 If you are a musician, you have probably already heard about it.
-That's because the Circle of 5ths tells us how keys are related to each other, and which notes and chords are in each key.
+That's because, the Circle of 5ths tells us how keys are related to each other, and which notes and chords are in each key.
 
 Here's a version of the Circle of 5ths showing all the major keys and their relative minors.
 
-![The Circle of 5ths](../../assets/images/taking-a-musical-walk/circle-of-fifths.svg)
+![The Circle of 5ths](../../assets/images/taking-a-musical-walk/circle-of-fifths.png)
 
 You may be more familiar with a version of this diagram where the minor keys are on the inner circle.
 I've done it like this for a specific reason.
@@ -68,7 +63,7 @@ The resulting notes are:
 | :---: | :--------: | :--------: | :----------: | :----------: | :--------: | :--------: | :---: |
 | C     | D          | E          | F            | G            | A          | B          | C     |
 
-This follows the Major Scale Pattern
+This follows the pattern of intervals for a major scale.
 
 >Whole-Whole-Half-Whole-Whole-Whole-Half
 
@@ -168,7 +163,7 @@ What's more, even though they are notated weirdly, we pass by every major scale 
 # Have We Done It?
 So is this it?
 How does the results table compare to the Circle of 5ths?
-Compare the 'Root' column of above table to the Major Keys ring of the Circle of 5ths.
+Compare the 'Root' column of the table above to the major keys ring of the Circle of 5ths.
 
 | Note    | 1  | 2   | 3   | 4   | 5   | 6    | 7     | 8     | 9   | 10  | 11  | 12  |
 | :-----: | :-:| :-: | :-: | :-: | :-: | :--: | :---: | :---: | :-: | :-: | :-: | :-: |
@@ -190,7 +185,7 @@ I touched on this when I mentioned B# and D# Major earlier.
 All notes and scales have an enharmonic equivalent.
 
 Our walk up in 5ths has spawned the Circle of 5ths!
-There are only two things different about our constructed circle compared to the 'normal' Circle of 5ths.
+There are only two things different about our constructed circle compared to the 'normal' one.
 
 1. Some notes have a different name; notably the 9th, 10th, 11th and 12th notes.
 2. The constructed circle does not show both names for enharmonic notes; notably for the 6th, 7th and 8th notes.
@@ -227,7 +222,7 @@ The next seven notes are:
 | :---: | :--------: | :--------: | :----------: | :----------: | :--------: | :--------: | :---: |
 | F     | G          | A          | B            | C            | D          | E          | F     |
 
-Again, this is close to a major scale but is not quite the same.
+Again, this is close to a major scale but it is not quite the same.
 The interval pattern is W-W-W-H-W-W-H.
 
 To make it a major scale, the 4th note needs to be lowered one half step.
@@ -260,7 +255,7 @@ Here is the result of going anti-clockwise around the circle in 4ths:
 | Abb   | Bbb        | Cb         | Dbb          | Ebb          | Fb         | Gb         | Abb   |
 | Dbb   | Ebb        | Fb         | Gbb          | Abb          | Bbb        | Cb         | Dbb   |
 
-Similarly to before, double flats help give each note a unique musical letter.
+Similar to before, double flats help give each note a unique musical letter.
 
 We arrive back at C Major with Dbb Major.
 Even more so than B# Major, I wouldn't recommend writing music in Dbb Major notation!
@@ -273,7 +268,7 @@ Music theory and notation can be confusing.
 That's because it's pretty difficult to write down sound.
 
 We've written out all the major scales using flats, sharps, double flats and double sharps.
-We could continue on this non-sensical notational journey but that wouldn't get us any further to the 'normal' Circle of 5ths.
+We could continue on this non-sensical notational journey, but that wouldn't get us any further to the 'normal' Circle of 5ths.
 
 Let's go clockwise around the circle, listing all the notes in both their sharp and flat variants.
 |          |     |     |     |     |     |     |     |     |     |     |     |     |
@@ -286,14 +281,14 @@ The most obvious is to not use the the double flats.
 Imagine trying to write a piece of music using any of the double flat notations.
 It would be a nightmare.
 
-We have the first 4 notes of the circle: C, G, D and A.
+We now have the first 4 notes of the circle: C, G, D and A.
 
 There is only one semitone between E and F, therefore Fb and E# are also good candidates to eliminate.
 There are cases where one might use E# or Fb.
 For example, it makes sense to use E# in the F# Major scale.
 Generally, however, the E# and Fb notation doesn't fit in.
 
-We are left with a choice for the following keys:
+After dropping Fb and E#, we are left with a choice for the following keys:
 |          |     |     |     |     |     |     |
 | :------: | :-: | :-: | :-: | :-: | :-: | :-: |
 | Sharps   | B   | F#  | C#  | G#  | D#  | A#  |
@@ -342,7 +337,7 @@ Keys that are opposite to one another on the circle have what can be thought of 
 Practically, that means that changing from a key to one opposite it on the circle will have a dramatic and obvious effect.
 
 When writing music, choosing to use the sharp or flat notation depends on the context of the music being written.
-Please don't show you musician friends a piece in Dbb Major and tell them I said it makes no difference!
+Please don't show your musician friends a piece in Dbb Major and tell them I said it makes no difference!
 
 # Key Signatures
 Key signatures come from the Circle of 5ths.
