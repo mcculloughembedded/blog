@@ -57,7 +57,7 @@ The programmer still has to think.
 The TDD Cycle must be followed correctly and the programmer has to learn how to write good tests.
 The system of TDD is a skill.
 
-# The Test's Are Right!
+# The Tests Are Right!
 In the first chapter of his TDD book, James stresses two points:
 
 1. The tests are right
