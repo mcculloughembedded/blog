@@ -215,7 +215,7 @@ This means that, starting once again with C, we should be able to construct the 
 Let's try it!
 
 # Going Anti-Clockwise
-Once again take the 5th of C Major, but this time count up only 4 notes to arrive at the note F.
+Once again start with the note C, but this time count up only 4 notes to arrive at the note F.
 
 The next seven notes are:
 |       |            |            |              |              |            |            |       |
@@ -283,7 +283,8 @@ It would be a nightmare.
 
 We now have the first 4 notes of the circle: C, G, D and A.
 
-There is only one semitone between E and F, therefore Fb and E# are also good candidates to eliminate.
+There is only one semitone between E and F.
+Therefore Fb and E# are also good candidates to eliminate.
 There are cases where one might use E# or Fb.
 For example, it makes sense to use E# in the F# Major scale.
 Generally, however, the E# and Fb notation doesn't fit in.
