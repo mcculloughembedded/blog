@@ -85,7 +85,7 @@ I have written state machines, fought with the idiosyncrasies of timers and both
 I have implemented and analysed a [CORDIC](https://en.wikipedia.org/wiki/CORDIC) arctan algorithm, and studied the maths behind an integer only square root implementation.
 For the most part, I've worked without a debugger, debugging by toggling IOs in strategic places or outputting binary coded decimal debug codes on them.
 I've dived into the linker scripts of production firmware, and worked with the company's hardware team to write and test the product's deep sleep code.
-I've scratched for literally bytes of code space to fit another feature in, or to fix a bug on existing firware.
+I've scratched for literally bytes of code space to fit another feature in, or to fix a bug on existing firmware.
 
 With the exception of Chapter 10 (Building Connected Devices), I have first hand experience of almost everything covered in the book.
 A lot of that experience came through failure.
