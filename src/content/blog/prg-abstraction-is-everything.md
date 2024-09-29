@@ -103,7 +103,7 @@ of a square as four lines of equal length, connected to each other at right
 angles.
 We don't have to consider the infinite number of points that make up the
 square.
-If we had to think of all the points that make up a square, we would be soon
+If we had to think of all the points that make up a square, we would soon
 be mentally overloaded, even when considering simple shapes like squares.
 
 It's not difficult to see how this concept can (and is!) extended to create
