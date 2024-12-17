@@ -6,7 +6,7 @@ title: "About Me"
 I am an embedded firmware developer with experience working with memory constrained devices in the consumer electronics industry.
 I primarily use C/C++ for on-chip development and Python for off-chip testing and debugging.
 I am currently on a sabbatical.
-You can read about my goals for this period in this post.
+You can read about my goals for this period in [this post](https://mcculloughembedded.com/posts/unemployed/).
 
 I play guitar, am interested in custom mechanical keyboards and I am always trying to expand my embedded skill set.
 I have a passion for learning and believe growth is achieved when one either learns new skills or improves ones current skills.
