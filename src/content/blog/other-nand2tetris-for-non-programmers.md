@@ -5,8 +5,6 @@ pubDatetime: 2024-10-13T04:06:31Z
 slug: nand2tetris-for-non-programmers
 featured: false
 draft: false
-tags:
-    - other
 description:
     Learning how to manage complexity by building a general purpose computer.
 ---
