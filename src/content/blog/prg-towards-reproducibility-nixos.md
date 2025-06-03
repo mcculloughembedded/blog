@@ -8,7 +8,7 @@ draft: false
 tags:
     - programming
 description:
-     How Nix tries to solve one of the biggest challenges in building software.
+     How Nix tries to solve one of the biggest challenges of building sotfware.
 ---
 
 # Nix and NixOS
@@ -195,7 +195,7 @@ It's as close as I've ever been to what I think is the ideal programming environ
 I love that my user packages are declared in a single file - and that I can add and remove them without fear of breakages.
 I also love that I can make ad hoc shells to work with software that I know I'll only need once or twice.
 
-It's great to be able to define reproducible environments when all the required packages are in nixpkgs, but it is very frustrating when even one package isn't the right version - or not in nixpkgs at all.
+It's great to be able to define reproducible environments all the required packages are in nixpkgs, but it is very frustrating when even one package isn't the right version - or not in nixpkgs at all.
 
 Sometimes I get extremely frustrated with Nix and NixOS, but when I go back to what I was using before, I can't believe that I used to work like that.
 
@@ -210,8 +210,8 @@ The dotfiles for this are stored in a private GitHub repository.
 ## Application Launcher (Rofi)
 ![Rofi](../../assets/images/towards-reproducibility-with-nixos/application-launcher.png)
 
-## Lock Screen (HyprLock)
-![HyrLock](../../assets/images/towards-reproducibility-with-nixos/lock-screen.png)
+## Logout Menu (wlogout)
+![wlogout](../../assets/images/towards-reproducibility-with-nixos/lock-screen.png)
 ## File Explorer (Yazi)
 ![Yazi](../../assets/images/towards-reproducibility-with-nixos/file-explorer.png)
 
