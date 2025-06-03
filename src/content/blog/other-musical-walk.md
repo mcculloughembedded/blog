@@ -10,7 +10,7 @@ description:
 ---
 
 # Music Theory
-In a bout of unexpected enthusiasum, I have recently taken a keen interest in music theory.
+In a bout of unexpected enthusiasm, I have recently taken a keen interest in music theory.
 Most introductions to music theory talk about the basic concepts such as notes and scales.
 Thereafter, they tell you to start memorising them.
 
