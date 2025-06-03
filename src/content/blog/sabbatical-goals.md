@@ -3,7 +3,7 @@ title: I'm Unemployed!
 author: David McCullough
 pubDatetime: 2024-12-17T04:06:31Z
 slug: unemployed
-featured: true
+featured: false
 draft: false
 description:
     My goals for the next four months.
