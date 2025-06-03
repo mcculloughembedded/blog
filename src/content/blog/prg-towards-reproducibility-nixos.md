@@ -1,7 +1,7 @@
 ---
 title: Towards Reproducibility With NixOS
 author: David McCullough
-pubDatetime: 2025-06-20T04:00:00Z
+pubDatetime: 2025-06-03T04:00:00Z
 slug: towards-reproducibility-with-nixos
 featured: false
 draft: false
