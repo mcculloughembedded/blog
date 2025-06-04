@@ -20,7 +20,7 @@ To quote from the introduction section of paper:
 To achieve this, Dolstra developed Nix, a [purely functional programming language](https://en.wikipedia.org/wiki/Purely_functional_programming) in which software is defined declaratively in plain text.
 Nix uses this declaration to create and place immutable packages in the [Nix Store](https://nix.dev/manual/nix/2.19/store/).
 The declaration can be moved to another machine, where Nix can use it to populate that machine's store.
-In theory, this guarantees that both machines have the packages and package versions in their stores.
+In theory, this guarantees that both machines have the same packages and package versions in their stores.
 
 Nix fetches packages from the [nixpkgs](https://github.com/NixOS/nixpkgs) repository.
 A stable version of nixpkgs is released every six months.
@@ -93,7 +93,7 @@ Within an hour, I had exactly the same system as I had on my previous PC.
 I know of no other tool that can do that so quickly and easily.
 
 # Nix-Shell
-From an end users perspective, my favourite part of Nix is the [Nix Shell](https://nix.dev/tutorials/first-steps/ad-hoc-shell-environments#ad-hoc-envs).
+From an end user's perspective, my favourite part of Nix is the [Nix Shell](https://nix.dev/tutorials/first-steps/ad-hoc-shell-environments#ad-hoc-envs).
 Nix Shell is how Nix provides both ad hoc and declarative shells.
 
 ## Ad Hoc Shell
@@ -110,7 +110,7 @@ The Nix Shell defaults to [Bash](https://www.gnu.org/software/bash/), but becaus
 Here's an example of me trying out the [cowsay](https://en.wikipedia.org/wiki/Cowsay) program in a Nix Shell running [Nushell](https://www.nushell.sh/) and [Starship](https://starship.rs/):
 ![Nix Shell](../../assets/images/towards-reproducibility-with-nixos/nix-shell.png)
 
-I have starship set up to show the Nix logo when my prompt is running in a Nix Shell.
+I have Starship set up to show the Nix logo when my prompt is running in a Nix Shell.
 
 I use [grimblast](https://github.com/hyprwm/contrib/tree/main/grimblast) to take screenshots.
 Grimblast is installed at the user level in my configuration.nix.
@@ -118,7 +118,7 @@ You can see that inside the Nix Shell Nushell and Starship behave the same as be
 
 If you want a completely isolated environment you can pass the `--pure` flag to the `nix-shell` command.
 The new shell won't inherit any of the system packages or environment variables.
-For extreme reproducibility, the nix-shell command has the [`-I nixpkgs=`](https://nix.dev/tutorials/first-steps/ad-hoc-shell-environments#towards-reproducibility) switch to pin the new shell to a specific revision of nxpkgs.
+For extreme reproducibility, the `nix-shell` command has the [`-I nixpkgs=`](https://nix.dev/tutorials/first-steps/ad-hoc-shell-environments#towards-reproducibility) switch to pin the new shell to a specific revision of nxpkgs.
 
 Nix installs packages in the Nix Store and leaves them there unless [`nix-collect-garbage`](https://nix.dev/manual/nix/2.28/command-ref/nix-collect-garbage.html) is run explicitly.
 The Nix Store can quickly start to take up a lot of disk space.
@@ -132,7 +132,7 @@ Environment variables can be defined in the shell by [adding them to shell.nix](
 
 This is the mechanism by which the Nix ecosystem allows one to create isolated and reproducible build environments.
 The Nix system is designed for building software.
-It therefore natural to use it to build a packages dependencies along with the package.
+It is therefore natural to use it to build packages dependencies along with the package.
 This is how many of the packages in nixpkgs are created.
 
 # The Frustrating Parts of Using Nix and NixOS
@@ -151,6 +151,7 @@ As an end-user, you have to wait for the bi-yearly releases of nixpkgs to get up
 
 This is not such a big problem for other package managers because packages are versioned independently.
 nixpkgs is versioned as a mono-repo so you don't get to easily choose the versions of individual packages.
+Additionally, if packages in Linux distributions that don't use Nix can't be installed through a package manager, they can usually be obtained through a pre-build binary.
 
 It's possible to use Nix to pull in packages that are not part of nixpkgs.
 The same method can be used to pull in a different version of a package.
@@ -158,7 +159,7 @@ However, not only is there no standard way of doing this, the [common methods](h
 
 Second, it locks you into Nix.
 Nix works, but often I would prefer to use a tool that is more standard.
-A good example of this are Python virtual environments.
+A good example of this is Python virtual environments.
 A lot of Python tools are written to integrate with Python virtual environments and don't play well with Nix.
 It's a difficult ask to get everyone to learn Nix when tools like [uv](https://docs.astral.sh/uv/) and [Poetry](https://python-poetry.org/) are industry standard and work just as well in practice.
 
@@ -190,12 +191,12 @@ I'm learning two relatively complex things at one time.
 
 # The Nix Life
 Despite it's frustrating elements, NixOS is an excellent operating system.
-It's as close as I've ever been to what I think is the ideal programming environment.
+It's as close as I've ever come to what I think is the ideal programming environment.
 
 I love that my user packages are declared in a single file - and that I can add and remove them without fear of breakages.
 I also love that I can make ad hoc shells to work with software that I know I'll only need once or twice.
 
-It's great to be able to define reproducible environments all the required packages are in nixpkgs, but it is very frustrating when even one package isn't the right version - or not in nixpkgs at all.
+It's great to be able to define reproducible shells when all the required packages are in nixpkgs, but it is very frustrating when even one package isn't the right version - or not in nixpkgs at all.
 
 Sometimes I get extremely frustrated with Nix and NixOS, but when I go back to what I was using before, I can't believe that I used to work like that.
 
