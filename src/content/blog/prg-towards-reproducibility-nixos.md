@@ -13,7 +13,7 @@ description:
 
 # Nix and NixOS
 [Nix](https://nixos.org/) is a package manager born from a [2006 PhD](https://edolstra.github.io/pubs/phd-thesis.pdf) published by Eelco Dolstra.
-To quote from the introduction section of paper:
+To quote from the introduction section of the paper:
 
 > This thesis is about getting computer programs from one machine to another - and having them still work when they get there.
 
@@ -132,7 +132,7 @@ Environment variables can be defined in the shell by [adding them to shell.nix](
 
 This is the mechanism by which the Nix ecosystem allows one to create isolated and reproducible build environments.
 The Nix system is designed for building software.
-It is therefore natural to use it to build packages dependencies along with the package.
+It is therefore natural to use it to build package dependencies along with the package.
 This is how many of the packages in nixpkgs are created.
 
 # The Frustrating Parts of Using Nix and NixOS
@@ -151,7 +151,7 @@ As an end-user, you have to wait for the bi-yearly releases of nixpkgs to get up
 
 This is not such a big problem for other package managers because packages are versioned independently.
 nixpkgs is versioned as a mono-repo so you don't get to easily choose the versions of individual packages.
-Additionally, if packages in Linux distributions that don't use Nix can't be installed through a package manager, they can usually be obtained through a pre-build binary.
+Additionally, if packages in Linux distributions that don't use Nix can't be installed through a package manager, they can usually be obtained through a pre-built binary.
 
 It's possible to use Nix to pull in packages that are not part of nixpkgs.
 The same method can be used to pull in a different version of a package.
