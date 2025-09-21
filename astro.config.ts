@@ -6,6 +6,8 @@ import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 // https://astro.build/config
 export default defineConfig({
   site: "https://mcculloughembedded.com",
@@ -17,7 +19,9 @@ export default defineConfig({
     sitemap(),
   ],
   markdown: {
+    rehypePlugins: [rehypeKatex],
     remarkPlugins: [
+      remarkMath,
       remarkToc,
       [
         remarkCollapse,
