@@ -8,7 +8,7 @@ draft: false
 tags:
     - programming
 description:
-     How Nix tries to solve one of the biggest challenges of building sotfware.
+     How Nix tries to solve one of the biggest challenges of building software.
 ---
 
 # Nix and NixOS
